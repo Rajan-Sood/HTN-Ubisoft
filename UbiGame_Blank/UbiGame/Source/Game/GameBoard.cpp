@@ -10,6 +10,7 @@ GameBoard::GameBoard()
 	:background(nullptr)
 {
 	CreateBackGround();
+	CreatPlayer();
 }
 
 
