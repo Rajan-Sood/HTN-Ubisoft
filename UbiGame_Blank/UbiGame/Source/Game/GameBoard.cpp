@@ -7,10 +7,9 @@
 using namespace Game;
 
 GameBoard::GameBoard()
-	:background(nullptr)
 {
 	CreateBackGround();
-	CreatPlayer();
+	CreatePlayer();
 }
 
 
@@ -19,7 +18,7 @@ GameBoard::~GameBoard()
 
 }
 
-void GameBoard::CreatPlayer()
+void GameBoard::CreatePlayer()
 {
 	player = new GameEngine::Entity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
@@ -44,6 +43,7 @@ void GameBoard::CreateBackGround()
 
 	background->AddComponent<BackgroundMovementComponent>();
 }
+
 
 void GameBoard::Update()
 {

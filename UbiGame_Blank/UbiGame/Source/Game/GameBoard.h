@@ -21,8 +21,13 @@ namespace Game
 
 	private:
 		void CreatePlayer();
+		void CreateBackGround();
+
+
 		void CreateObstacle();
-		GameEngine::Entity* m_player;
+		GameEngine::Entity* player;
+		GameEngine::Entity* background;
+
 	};
 }
 
