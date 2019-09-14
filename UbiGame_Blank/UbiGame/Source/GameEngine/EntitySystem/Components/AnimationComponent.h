@@ -3,7 +3,7 @@
 #include "GameEngine\Util\AnimationManager.h"
 
 namespace GameEngine
-{		
+{
 	class AnimationComponent : public Component
 	{
 	public:
@@ -14,7 +14,11 @@ namespace GameEngine
 		virtual void OnRemoveFromWorld() override;
 
 		void PlayAnim(EAnimationId::type animId);
-		virtual void Update() override;		
+		void StopAnim();
+
+		void SetIsLooping(bool looping) { m_isLooping = looping; }
+
+		virtual void Update() override;
 		sf::Vector2i GetWantedTileIndex() const;
 
 		bool IsAnimPlaying() const;
@@ -24,6 +28,8 @@ namespace GameEngine
 		EAnimationId::type m_currentAnim;
 		int m_currentFrame;
 		float m_currentFrameDT;
+
+		bool m_isLooping;
 	};
 }
 

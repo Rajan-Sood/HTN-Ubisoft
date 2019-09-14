@@ -5,10 +5,11 @@
 
 using namespace GameEngine;
 
-AnimationComponent::AnimationComponent()	
+AnimationComponent::AnimationComponent()
 	: m_currentFrame(0)
 	, m_currentAnim(EAnimationId::None)
 	, m_currentFrameDT(0.f)
+	, m_isLooping(true)
 {
 
 }
@@ -28,7 +29,7 @@ void AnimationComponent::OnAddToWorld()
 
 void AnimationComponent::OnRemoveFromWorld()
 {
-	__super::OnRemoveFromWorld();	
+	__super::OnRemoveFromWorld();
 }
 
 
@@ -55,9 +56,16 @@ void AnimationComponent::Update()
 	if (m_currentFrameDT > dt_perFrame)
 	{
 		m_currentFrameDT = m_currentFrameDT - dt_perFrame;
-		m_currentFrame++;		
+		m_currentFrame++;
 		if (m_currentFrame >= currDefinition->m_frameCount)
+		{
 			m_currentFrame = 0;
+			if (!m_isLooping)
+			{
+				StopAnim();
+			}
+		}
+
 	}
 }
 
@@ -65,7 +73,15 @@ void AnimationComponent::Update()
 void AnimationComponent::PlayAnim(EAnimationId::type animId)
 {
 	m_currentFrame = 0;
-	m_currentAnim = animId;	
+	m_currentAnim = animId;
+	m_currentFrameDT = 0.f;
+}
+
+
+void AnimationComponent::StopAnim()
+{
+	m_currentAnim = EAnimationId::None;
+	m_currentFrame = 0;
 	m_currentFrameDT = 0.f;
 }
 

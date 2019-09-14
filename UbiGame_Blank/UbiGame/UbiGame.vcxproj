@@ -27,13 +27,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -138,11 +138,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Game\GameBoard.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\BackGroundMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerCameraComponent.cpp" />
+    <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
+    <ClCompile Include="Source\Game\GameEntities\PlayerEntity.cpp" />
     <ClCompile Include="Source\GameEngine\Util\CameraManager.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\PlayerSoundComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\ParticleComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\ParticleEmitterComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\SoundComponent.cpp" />
@@ -152,9 +151,7 @@
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\CollidableComponent.cpp" />
     <ClCompile Include="Source\GameEngine\Util\CollisionManager.cpp" />
     <ClCompile Include="Source\GameEngine\Util\SoundManager.cpp" />
-    <ClCompile Include="Source\Game\GameEntities\ObstacleEntity.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
-    <ClCompile Include="Source\Game\GameEntities\PlayerEntity.cpp" />
+    <ClCompile Include="Source\Game\GameBoard.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\RenderComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Component.cpp" />
     <ClCompile Include="main.cpp" />
@@ -164,11 +161,10 @@
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Game\GameBoard.h" />
-    <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerCameraComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
+    <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
     <ClInclude Include="Source\GameEngine\Util\CameraManager.h" />
-    <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\ParticleComponent.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\ParticleEmitterComponent.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\SoundComponent.h" />
@@ -178,9 +174,7 @@
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\CollidableComponent.h" />
     <ClInclude Include="Source\GameEngine\Util\CollisionManager.h" />
     <ClInclude Include="Source\GameEngine\Util\SoundManager.h" />
-    <ClInclude Include="Source\Game\GameEntities\ObstacleEntity.h" />
-    <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
-    <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
+    <ClInclude Include="Source\Game\GameBoard.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\RenderComponent.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Component.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Entity.h" />

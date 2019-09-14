@@ -11,24 +11,13 @@ namespace GameEngine
 		enum type
 		{
 			None = -1,
-			Player = 0,
-			Tileset,
-			Background,
-			Particles,
 			Count,
 		};
 	}	
 
 	inline const char* GetPath(eTexture::type texture)
 	{
-		switch (texture)
-		{
-		case eTexture::Player:    return "player.png";
-		case eTexture::Tileset:   return "tileset.png";
-		case eTexture::Background:		  return "bg.jpg";
-		case eTexture::Particles: return "particles.png";
-		default:       return "UnknownTexType";
-		}
+		return "UnknownTexType";
 	}
 
 	class TextureManager
@@ -54,14 +43,7 @@ namespace TextureHelper
 {
 	static sf::Vector2f GetTextureTileSize(GameEngine::eTexture::type texture)
 	{
-		switch (texture)
-		{
-		case  GameEngine::eTexture::Player:  return sf::Vector2f(32.f, 32.f);
-		case  GameEngine::eTexture::Tileset: return sf::Vector2f(32.f, 32.f);
-		//case  GameEngine::eTexture::BG:	     return sf::Vector2f(852.f, 441.f);
-		case  GameEngine::eTexture::Particles: return sf::Vector2f(31.f, 32.f);
-		default:							 return sf::Vector2f(-1.f, -1.f);
-		}
+		return sf::Vector2f(-1.f, -1.f);
 	}
 }
 
