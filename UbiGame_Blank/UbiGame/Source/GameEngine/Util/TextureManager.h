@@ -11,7 +11,7 @@ namespace GameEngine
 		enum type
 		{
 			None = -1,
-			Player = 0,
+			Player,
 			Tileset,
 			Background,
 			Particles,
@@ -23,7 +23,7 @@ namespace GameEngine
 	{
 		switch (texture)
 		{
-		case eTexture::Player:    return "player.png";
+		case eTexture::Player:    return "thekeanu.png";
 		case eTexture::Tileset:   return "tileset.png";
 		case eTexture::Background:		  return "bg.jpg";
 		case eTexture::Particles: return "particles.png";
@@ -56,7 +56,7 @@ namespace TextureHelper
 	{
 		switch (texture)
 		{
-		case  GameEngine::eTexture::Player:  return sf::Vector2f(32.f, 32.f);
+		//case  GameEngine::eTexture::Player:  return sf::Vector2f(32.f, 32.f);
 		case  GameEngine::eTexture::Tileset: return sf::Vector2f(32.f, 32.f);
 		//case  GameEngine::eTexture::BG:	     return sf::Vector2f(500.f, 500.f);
 		case  GameEngine::eTexture::Particles: return sf::Vector2f(31.f, 32.f);
