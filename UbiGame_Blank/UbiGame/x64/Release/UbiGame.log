@@ -1,3 +1,38 @@
-﻿  UbiGame.vcxproj -> D:\UbiGameHackTheNorth2019\UbiGame_Blank\x64\Release\UbiGame.exe
-  UbiGame.vcxproj -> D:\UbiGameHackTheNorth2019\UbiGame_Blank\x64\Release\UbiGame.pdb (Full PDB)
+﻿  PlayerMovementComponent.cpp
+  PlayerEntity.cpp
+  CameraManager.cpp
+  ParticleComponent.cpp
+  ParticleEmitterComponent.cpp
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): warning C4200:  nonstandard extension used: zero-sized array in struct/union
+  SoundComponent.cpp
+  AnimationManager.cpp
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): message :  This member will be ignored by a defaulted constructor or copy/move assignment operator
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): warning C4200:  nonstandard extension used: zero-sized array in struct/union
+  AnimationComponent.cpp
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): message :  This member will be ignored by a defaulted constructor or copy/move assignment operator
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): warning C4200:  nonstandard extension used: zero-sized array in struct/union
+  CollidablePhysicsComponent.cpp
+  CollidableComponent.cpp
+  CollisionManager.cpp
+  SoundManager.cpp
+  GameBoard.cpp
+  RenderComponent.cpp
+  Component.cpp
+  main.cpp
+  Entity.cpp
+  GameEngineMain.cpp
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): message :  This member will be ignored by a defaulted constructor or copy/move assignment operator
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): warning C4200:  nonstandard extension used: zero-sized array in struct/union
+  TextureManager.cpp
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): message :  This member will be ignored by a defaulted constructor or copy/move assignment operator
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): warning C4200:  nonstandard extension used: zero-sized array in struct/union
+  SpriteRenderComponent.cpp
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): message :  This member will be ignored by a defaulted constructor or copy/move assignment operator
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): warning C4200:  nonstandard extension used: zero-sized array in struct/union
+D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\UbiGame\Source\GameEngine\Util\TextureManager.h(38,43): message :  This member will be ignored by a defaulted constructor or copy/move assignment operator
+  Generating code
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  All 521 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  UbiGame.vcxproj -> D:\UW - ECE\HTN\Ubisoft\UbiGame_Blank\UbiGame_Blank\x64\Release\UbiGame.exe
   0 File(s) copied
