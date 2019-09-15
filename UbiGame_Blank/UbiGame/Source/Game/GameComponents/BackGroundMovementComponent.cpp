@@ -26,7 +26,7 @@ void BackgroundMovementComponent::Update()
 	float dt = GameEngine::GameEngineMain::GetTimeDelta();
 
 	sf::Vector2f wantedVel = sf::Vector2f(0.f, 0.f);
-	float playerVel = 100.f;
+	float playerVel = 35.f;
 
 	wantedVel.x -= playerVel * dt;
 

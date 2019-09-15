@@ -10,7 +10,9 @@ namespace GameEngine
 	namespace EAnimationId
 	{
 		enum type
-		{			
+		{
+			Run,
+			Smoke,
 			None,
 		};
 	}
@@ -46,7 +48,7 @@ namespace GameEngine
 			: m_animId(EAnimationId::None)
 			, m_texture(eTexture::None)
 			, m_startTile(sf::Vector2i(0, 0))
-			, m_frameCount(5)
+			, m_frameCount(7)
 			, m_fps(20)
 		{
 

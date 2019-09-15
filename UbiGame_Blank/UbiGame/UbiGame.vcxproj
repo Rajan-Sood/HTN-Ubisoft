@@ -140,8 +140,8 @@
   <ItemGroup>
     <ClCompile Include="gravityComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\BackGroundMovementComponent.cpp" />
+    <ClCompile Include="Source\Game\GameComponents\GenericItemComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\HUD.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\PlayerCameraComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerSoundComponent.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ItemEntity.cpp" />
@@ -168,8 +168,8 @@
   <ItemGroup>
     <ClInclude Include="gravityComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\GenericItemComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\HUD.h" />
-    <ClInclude Include="Source\Game\GameComponents\PlayerCameraComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h" />
     <ClInclude Include="Source\Game\GameEntities\ItemEntity.h" />
