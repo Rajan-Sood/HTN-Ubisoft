@@ -9,7 +9,6 @@ ItemEntity::ItemEntity()
 	m_renderComponent = static_cast<GameEngine::SpriteRenderComponent*>(AddComponent<GameEngine::SpriteRenderComponent>());
 	m_renderComponent->SetFillColor(sf::Color::Transparent);
 	m_renderComponent->SetTexture(GameEngine::eTexture::Items);
-	//m_renderComponent->SetZLevel(2);
 
 	float randTile = ((4 - 0) * ((float)rand() / RAND_MAX)) + 0;
 

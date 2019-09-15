@@ -11,6 +11,10 @@ PlayerEntity::PlayerEntity()
 	m_renderComponent->SetFillColor(sf::Color::Transparent);
 	m_playerMovementComponent = static_cast<Game::PlayerMovementComponent*>(AddComponent<Game::PlayerMovementComponent>());
 	AddComponent<GameEngine::CollidablePhysicsComponent>();
+	//m_playerMovementComponent = static_cast<Game::gravityComponent*>(AddComponent<Game::CollidablePhysicsComponent>());
+	GameEngine::CollidablePhysicsComponent test =  GameEngine::CollidablePhysicsComponent();
+
+	collide = test.m_collide;
 
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
 	m_renderComponent->SetZLevel(2);

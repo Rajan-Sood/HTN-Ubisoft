@@ -3,11 +3,11 @@
 
 namespace Game
 {
-	class HUD : public GameEngine::Component
+	class FbiMovementComponent : public GameEngine::Component
 	{
 	public:
-		HUD();
-		~HUD();
+		FbiMovementComponent();
+		~FbiMovementComponent();
 
 		virtual void Update() override;
 		virtual void OnAddToWorld() override;

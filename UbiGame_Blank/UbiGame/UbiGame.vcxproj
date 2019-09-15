@@ -138,12 +138,13 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="gravityComponent.cpp" />
+    <ClCompile Include="Source\Game\GameComponents\FbiMovementComponent.cpp" />
+    <ClCompile Include="Source\Game\GameComponents\gravityComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\BackGroundMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\GenericItemComponent.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\HUD.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerSoundComponent.cpp" />
+    <ClCompile Include="Source\Game\GameEntities\FbiEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ItemEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\PlayerEntity.cpp" />
     <ClCompile Include="Source\GameEngine\Util\CameraManager.cpp" />
@@ -166,12 +167,13 @@
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gravityComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\FbiMovementComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\gravityComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\GenericItemComponent.h" />
-    <ClInclude Include="Source\Game\GameComponents\HUD.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h" />
+    <ClInclude Include="Source\Game\GameEntities\FbiEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\ItemEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
     <ClInclude Include="Source\GameEngine\Util\CameraManager.h" />

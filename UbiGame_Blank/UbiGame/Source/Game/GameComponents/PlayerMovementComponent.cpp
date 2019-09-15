@@ -1,11 +1,4 @@
 #include "PlayerMovementComponent.h"
-#include "SFML/Window/Keyboard.hpp"
-#include "SFML/System/Vector2.hpp"
-#include "GameEngine/EntitySystem/Entity.h"
-#include "GameEngine/GameEngineMain.h"
-#include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h"
-#include "GameEngine/EntitySystem/Components/AnimationComponent.h"
-#include "../gravityComponent.h"
 
 
 #include "GameEngine\GameEngineMain.h"
@@ -37,23 +30,49 @@ void PlayerMovementComponent::Update()
 	sf::Vector2f wantedVel = sf::Vector2f(0.f, 0.f);
 	float playerVel = 100.f;
 
-	static bool prevPress = 0;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && !prevPress)
-	{
-		wantedVel.y = -200;
-		prevPress = 1;
-	}
+	wantedVel.x = 2 * dt;
+	static bool isDown = 1;
 
-	if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	bool temp = false;
+	temp = GetEntity()->GetCol();
+	
+	if (temp)
 	{
-		prevPress = 0;
-	}
+		wantedVel.x += 1;
 
-	gravityComponent* jumpPhys = GetEntity()->GetComponent<gravityComponent>();
-	if (jumpPhys)
-	{
-		jumpPhys->SetVelocity(wantedVel);
 	}
+	//GetEntity()->coll = 
+
+
+	if (GetEntity()->GetPos().y < 60)
+	{
+		isDown = 0;
+	}
+	if (GetEntity()->GetPos().y > 300)
+	{
+		GetEntity()->SetPos(sf::Vector2f(220.f, 300.f));
+		isDown = 1;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && isDown)
+	{
+		wantedVel.y = -0.15;
+	}
+	else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || !isDown)
+	{
+		wantedVel.y = 0.1;
+		isDown = 0;
+	}
+	
+
+	/*
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		wantedVel.y -= playerVel * dt;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		wantedVel.y += playerVel * dt;
+	}*/
 
 	GetEntity()->SetPos(GetEntity()->GetPos() + wantedVel);
 

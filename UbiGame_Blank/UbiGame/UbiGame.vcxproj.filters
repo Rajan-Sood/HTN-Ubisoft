@@ -3,7 +3,6 @@
   <ItemGroup>
     <ClCompile Include="Source\Game\GameComponents\BackGroundMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\GenericItemComponent.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\HUD.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerSoundComponent.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ItemEntity.cpp" />
@@ -26,6 +25,9 @@
     <ClCompile Include="Source\GameEngine\GameEngineMain.cpp" />
     <ClCompile Include="Source\GameEngine\Util\TextureManager.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.cpp" />
+    <ClCompile Include="Source\Game\GameComponents\gravityComponent.cpp" />
+    <ClCompile Include="Source\Game\GameEntities\FbiEntity.cpp" />
+    <ClCompile Include="Source\Game\GameComponents\FbiMovementComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -88,9 +90,6 @@
     <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Game\GameComponents\PlayerCameraComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Game\GameComponents\BackGroundMovementComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -103,86 +102,8 @@
     <ClCompile Include="Source\Game\GameEntities\ItemEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gravityComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\GameEngine\GameEngineMain.h">
-      <Filter>Source Files\GameEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\RenderComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameBoard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\Util\CollisionManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\CollidableComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\CollidablePhysicsComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\Util\TextureManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\AnimationComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\Util\AnimationManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\ParticleComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\ParticleEmitterComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\EntitySystem\Components\SoundComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\Util\SoundManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameEngine\Util\CameraManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameComponents\PlayerCameraComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameComponents\HUD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\GameEntities\ItemEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gravityComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\GenericItemComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\HUD.h" />
@@ -207,5 +128,30 @@
     <ClInclude Include="Source\GameEngine\GameEngineMain.h" />
     <ClInclude Include="Source\GameEngine\Util\TextureManager.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h" />
+    <ClInclude Include="Source\Game\GameEntities\ItemEntity.h" />
+    <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
+    <ClInclude Include="Source\GameEngine\Util\CameraManager.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\ParticleComponent.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\ParticleEmitterComponent.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\SoundComponent.h" />
+    <ClInclude Include="Source\GameEngine\Util\AnimationManager.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\AnimationComponent.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\CollidablePhysicsComponent.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\CollidableComponent.h" />
+    <ClInclude Include="Source\GameEngine\Util\CollisionManager.h" />
+    <ClInclude Include="Source\GameEngine\Util\SoundManager.h" />
+    <ClInclude Include="Source\Game\GameBoard.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\RenderComponent.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Component.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Entity.h" />
+    <ClInclude Include="Source\GameEngine\GameEngineMain.h" />
+    <ClInclude Include="Source\GameEngine\Util\TextureManager.h" />
+    <ClInclude Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.h" />
+    <ClInclude Include="Source\Game\GameComponents\gravityComponent.h" />
+    <ClInclude Include="Source\Game\GameEntities\FbiEntity.h" />
+    <ClInclude Include="Source\Game\GameComponents\FbiMovementComponent.h" />
   </ItemGroup>
 </Project>

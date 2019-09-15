@@ -2,24 +2,23 @@
 #include "GameEngine\EntitySystem\Entity.h"
 #include "GameEngine\EntitySystem\Components\AnimationComponent.h"
 #include "GameEngine\EntitySystem\Components\SpriteRenderComponent.h"
-#include "Game\GameComponents\PlayerMovementComponent.h"
+#include "Game\GameComponents\FbiMovementComponent.h"
 
 namespace Game
 {
 
-	class PlayerEntity : public GameEngine::Entity
+	class FbiEntity : public GameEngine::Entity
 	{
 	public:
-		PlayerEntity();
-		~PlayerEntity();
+		FbiEntity();
+		~FbiEntity();
 
 		virtual void OnAddToWorld() override;
 		virtual void OnRemoveFromWorld() override;
-		bool collide;
 
 	protected:
 		GameEngine::SpriteRenderComponent* m_renderComponent;
-		PlayerMovementComponent* m_playerMovementComponent;
+		FbiMovementComponent* m_fbiMovementComponent;
 		GameEngine::AnimationComponent* m_animComponent;
 	};
 }

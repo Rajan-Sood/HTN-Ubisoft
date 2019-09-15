@@ -12,6 +12,7 @@ namespace GameEngine
 		{
 			None = -1,
 			Player,
+			FBI,
 			Items,
 			Background,
 			Count,
@@ -24,6 +25,7 @@ namespace GameEngine
 		{
 		case eTexture::Player:    return "multiplekeanu.png";
 		case eTexture::Items:	return "items.png";
+		case eTexture::FBI:		return"fbi.jpg";
 		case eTexture::Background:		  return "bg.jpg";
 		default:       return "UnknownTexType";
 		}
@@ -56,7 +58,7 @@ namespace TextureHelper
 		{
 
 		case  GameEngine::eTexture::Player:  return sf::Vector2f(115.f, 118.f);
-		//case  GameEngine::eTexture::Building: return sf::Vector2f(120.f, 130.f);
+		case  GameEngine::eTexture::FBI: return sf::Vector2f(100.f, 100.f);
 		//case  GameEngine::eTexture::Tileset: return sf::Vector2f(32.f, 32.f);
 		case GameEngine::eTexture::Items: return sf::Vector2f(70.f, 70.f);
 		//case  GameEngine::eTexture::BG:	     return sf::Vector2f(500.f, 500.f);

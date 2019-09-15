@@ -20,11 +20,13 @@ namespace GameEngine
 		sf::Vector2f GetPos()  const { return m_pos; }
 		sf::Vector2f GetSize() const { return m_size; }
 		float		 GetRot()  const { return m_rotation; }
+		bool		 GetCol()  const { return m_coll; }
 		
+		bool		m_coll;
 		void		 SetPos(sf::Vector2f pos)   { m_pos = pos; }
 		void		 SetSize(sf::Vector2f size) { m_size = size; }
-		void	     SetRotation(float rotation) { m_rotation = rotation; }		
-
+		void	     SetRotation(float rotation) { m_rotation = rotation; }	
+		void		 SetColl(bool coll) { m_coll = coll; }
 		//Components
 		template <class T>
 		T* GetComponent()

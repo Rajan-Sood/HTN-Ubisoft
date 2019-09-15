@@ -32,14 +32,22 @@ namespace Game
 
 	private:
 		void CreatePlayer();
+		void CreateEnemy();
 		void CreateBackGround();
+		void UpdatePlayerDying();
+
 		
 
 		float i_lastObstacleSpawnTimer;
+		float i_lastFbiSpawnTimer;
+
 		void CreateObstacle();
 		std::vector<GameEngine::Entity*> itemList;
 		GameEngine::Entity* player;
 		GameEngine::Entity* background;
+		GameEngine::Entity* enemy;
+		bool  m_isGameOver;
+
 
 	};
 }

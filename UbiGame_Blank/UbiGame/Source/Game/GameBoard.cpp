@@ -1,4 +1,5 @@
 #include "GameBoard.h"
+#include<iostream>
 
 #include "GameEngine\GameEngineMain.h"
 #include "Game\GameComponents\BackgroundMovementComponent.h"
@@ -6,14 +7,20 @@
 #include <Game\GameEntities\ItemEntity.h>
 #include <GameEngine\EntitySystem\Components\ParticleEmitterComponent.h>
 #include "Game\GameComponents\PlayerMovementComponent.h"
-#include "../../gravityComponent.h"
+#include"Game/GameComponents/gravityComponent.h"
 #include "Game\GameEntities\PlayerEntity.h"
+#include "Game\GameEntities\FbiEntity.h"
+
+#include"Game/GameComponents/gravityComponent.h"
+
 
 using namespace Game;
 
 GameBoard::GameBoard()
 	:player(nullptr)
+	,enemy(nullptr)
 	,background(nullptr)
+	, m_isGameOver(false)
 {
 	CreateBackGround();
 	CreatePlayer();
@@ -22,17 +29,29 @@ GameBoard::GameBoard()
 
 GameBoard::~GameBoard()
 {
+	GameEngine::GameEngineMain::GetInstance()->~GameEngineMain();
 
 }
 
 void GameBoard::CreatePlayer()
 {
+	
 	player = new PlayerEntity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
-
+	
 	player->SetPos(sf::Vector2f(220.f, 300.f));
 	player->SetSize(sf::Vector2f(100.f, 100.f));
 
+
+}
+
+void GameBoard::CreateEnemy()
+{
+	enemy = new FbiEntity();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(enemy);
+
+	enemy->SetPos(sf::Vector2f(420.f, 290.f));
+	enemy->SetSize(sf::Vector2f(100.f, 100.f));
 }
 
 
@@ -58,21 +77,35 @@ void GameBoard::Update()
 {
 	float dt = GameEngine::GameEngineMain::GetInstance()->GetTimeDelta();
 
-	i_lastObstacleSpawnTimer -= dt;
-
-	if (i_lastObstacleSpawnTimer <= 0.f)
+	if (!m_isGameOver)
 	{
-		SpawnNewRandomItems();
-	}
+		i_lastObstacleSpawnTimer -= dt;
+		i_lastFbiSpawnTimer -= dt;
 
-	UpdateItems(dt);
+		if (i_lastObstacleSpawnTimer <= 0.f)
+		{
+			SpawnNewRandomItems();
+
+		}
+		
+
+
+		UpdateItems(dt);
+	}
+	
+}
+
+void GameBoard::UpdatePlayerDying()
+{
+	static float xToPlayerDie = 0.f;
+	if (player->GetPos().x < xToPlayerDie)
+	{
+		m_isGameOver = true;
+	}
 }
 
 
-	player->AddComponent<PlayerMovementComponent>();
-	player->AddComponent<GameEngine::AnimationComponent>();
-	player->AddComponent<gravityComponent>();
-
+	
 void GameBoard::UpdateItems(float dt)
 {
 	static float obstacleSpeed = 130.f;
@@ -98,8 +131,9 @@ void GameBoard::SpawnNewRandomItems()
 	static int maxObstacleCount = 7;
 
 
-	static float minNextSpawnTime = 0.3f;
-	static float maxNextSpawnTime = 0.7f;
+	static float minNextSpawnTime = 1.5f;
+	static float maxNextSpawnTime = 2.3f;
+	
 
 	static float minObstacleXPos = 350.f;
 	static float maxObstacleXPos = 450.f;
@@ -116,6 +150,7 @@ void GameBoard::SpawnNewRandomItems()
 
 
 	i_lastObstacleSpawnTimer = RandomFloatRange(minNextSpawnTime, maxNextSpawnTime);
+
 }
 
 void GameBoard::SpawnNewItem(const sf::Vector2f& pos, const sf::Vector2f& size)
