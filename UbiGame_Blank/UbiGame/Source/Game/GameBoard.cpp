@@ -6,7 +6,9 @@
 #include <Game\GameEntities\ItemEntity.h>
 #include <GameEngine\EntitySystem\Components\ParticleEmitterComponent.h>
 #include "Game\GameComponents\PlayerMovementComponent.h"
+#include "../../gravityComponent.h"
 #include "Game\GameEntities\PlayerEntity.h"
+
 using namespace Game;
 
 GameBoard::GameBoard()
@@ -66,6 +68,11 @@ void GameBoard::Update()
 	UpdateItems(dt);
 }
 
+
+	player->AddComponent<PlayerMovementComponent>();
+	player->AddComponent<GameEngine::AnimationComponent>();
+	player->AddComponent<gravityComponent>();
+
 void GameBoard::UpdateItems(float dt)
 {
 	static float obstacleSpeed = 130.f;
@@ -89,6 +96,7 @@ void GameBoard::SpawnNewRandomItems()
 {
 	static int minObstacleCount = 2;
 	static int maxObstacleCount = 7;
+
 
 	static float minNextSpawnTime = 0.3f;
 	static float maxNextSpawnTime = 0.7f;
