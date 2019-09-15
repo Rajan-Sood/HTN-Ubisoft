@@ -15,13 +15,22 @@ namespace Game
 		GameBoard();
 		virtual ~GameBoard();
 
-
+		void SpawnNewBuildings(const sf::Vector2f& pos, const sf::Vector2f& size);
+		void SpawnNewRandomBuildings();
+		void UpdateBuildings(float dt);
+		float RandomFloatRange(float a, float b)
+		{
+			return ((b - a) * ((float)rand() / RAND_MAX)) + a;
+		}
 		void Update();		
 		bool IsGameOver() { return false; }
 
 	private:
 		void CreatePlayer();
 		void CreateBackGround();
+
+		float i_lastObstacleSpawnTimer;
+		std::vector<GameEngine::Entity*> BuildingList;
 
 
 		void CreateObstacle();

@@ -19,18 +19,16 @@ AnimationManager::~AnimationManager()
 
 void AnimationManager::InitStaticGameAnimations()
 {
-	/*
-	//Template definition -> every new animation needs to have an ID and a definition that controls how animation is played
 	m_animDefinitions.push_back
 	(
-	SAnimationDefinition(
-	EAnimationId::BirdIdle,
-	eTexture::Player,
-	sf::Vector2i(0, 0),
-	10,
-	3)
+		SAnimationDefinition(
+			EAnimationId::Run,
+			eTexture::Player,
+			sf::Vector2i(0, 0),
+			4,
+			5)
 	);
-	*/
+
 }
 
 

@@ -143,6 +143,7 @@
     <ClCompile Include="Source\Game\GameComponents\PlayerCameraComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerSoundComponent.cpp" />
+    <ClCompile Include="Source\Game\GameEntities\BuildingEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ItemEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\PlayerEntity.cpp" />
     <ClCompile Include="Source\GameEngine\Util\CameraManager.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Source\Game\GameComponents\PlayerCameraComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h" />
+    <ClInclude Include="Source\Game\GameEntities\BuildingEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\ItemEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
     <ClInclude Include="Source\GameEngine\Util\CameraManager.h" />
