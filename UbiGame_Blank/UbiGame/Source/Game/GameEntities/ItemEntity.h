@@ -2,6 +2,8 @@
 #include "GameEngine\EntitySystem\Entity.h"
 #include "GameEngine\EntitySystem\Components\SpriteRenderComponent.h"
 #include "GameEngine\GameEngineMain.h"
+#include "GameEngine\EntitySystem\Components\AnimationComponent.h"
+#include "GameEngine\EntitySystem\Components\SpriteRenderComponent.h"
 
 namespace Game
 {

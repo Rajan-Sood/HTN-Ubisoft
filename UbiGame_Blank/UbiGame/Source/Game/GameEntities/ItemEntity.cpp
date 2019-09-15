@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include "GameEngine\GameEngineMain.h"
 #include "ItemEntity.h"
-
 using namespace Game;
 
 ItemEntity::ItemEntity()
@@ -22,6 +21,7 @@ ItemEntity::~ItemEntity()
 {
 
 }
+
 
 void ItemEntity::OnAddToWorld()
 {

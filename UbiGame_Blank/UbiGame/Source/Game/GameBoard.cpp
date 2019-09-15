@@ -5,10 +5,12 @@
 #include "GameEngine\EntitySystem\Components\SpriteRenderComponent.h"
 #include <Game\GameEntities\ItemEntity.h>
 #include <GameEngine\EntitySystem\Components\ParticleEmitterComponent.h>
-
+#include "Game\GameComponents\PlayerMovementComponent.h"
 using namespace Game;
 
 GameBoard::GameBoard()
+	:player(nullptr)
+	,background(nullptr)
 {
 	CreateBackGround();
 	CreatePlayer();
@@ -30,7 +32,6 @@ void GameBoard::CreatePlayer()
 
 }
 
-
 void GameBoard::CreateBackGround()
 {
 	background = new GameEngine::Entity();
@@ -46,6 +47,27 @@ void GameBoard::CreateBackGround()
 
 	background->AddComponent<BackgroundMovementComponent>();
 }
+
+
+void GameBoard::CreatePlayer()
+{
+	player = new GameEngine::Entity();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
+
+	player->SetPos(sf::Vector2f(200.f, 250.f));
+	player->SetSize(sf::Vector2f(115.f, 118.f));
+
+	GameEngine::SpriteRenderComponent* spriteRender = static_cast<GameEngine::SpriteRenderComponent*>
+		(player->AddComponent<GameEngine::SpriteRenderComponent>());
+	spriteRender->SetFillColor(sf::Color::Transparent);
+
+	spriteRender->SetTexture(GameEngine::eTexture::Player);
+
+	player->AddComponent<PlayerMovementComponent>();
+
+
+}
+
 
 
 void GameBoard::Update()

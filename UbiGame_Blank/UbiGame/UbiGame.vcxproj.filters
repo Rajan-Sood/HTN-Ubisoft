@@ -91,6 +91,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game\GameEntities\ObstacleEntity.cpp">
+    <ClCompile Include="Source\Game\GameComponents\HUD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game\GameEntities\ItemEntity.cpp">
@@ -168,6 +169,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\GameEntities\ObstacleEntity.h">
+    <ClInclude Include="Source\Game\GameComponents\HUD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\GameEntities\ItemEntity.h">
