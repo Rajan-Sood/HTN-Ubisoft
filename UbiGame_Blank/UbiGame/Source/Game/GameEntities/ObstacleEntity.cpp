@@ -3,6 +3,8 @@
 #include "GameEngine/EntitySystem/Components/CollidableComponent.h"
 
 #include <SFML/Graphics.hpp>
+#include "GameEngine\EntitySystem\Entity.h"
+#include "GameEngine\EntitySystem\Components\SpriteRenderComponent.h"
 
 using namespace Game;
 

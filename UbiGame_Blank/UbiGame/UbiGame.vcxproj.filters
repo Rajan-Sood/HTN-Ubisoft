@@ -87,6 +87,10 @@
     <ClCompile Include="Source\Game\GameComponents\PlayerSoundComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\GameComponents\GenericItemComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameEntities\ObstacleEntity.cpp">
     <ClCompile Include="Source\Game\GameComponents\HUD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -164,6 +168,10 @@
     <ClInclude Include="Source\Game\GameComponents\PlayerSoundComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Game\GameComponents\GenericItemComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameEntities\ObstacleEntity.h">
     <ClInclude Include="Source\Game\GameComponents\HUD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
