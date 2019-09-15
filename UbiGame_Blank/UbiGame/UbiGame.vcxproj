@@ -138,6 +138,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gravityComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\BackGroundMovementComponent.cpp" />
     <ClCompile Include="Source\Game\GameComponents\HUD.cpp" />
     <ClCompile Include="Source\Game\GameComponents\PlayerCameraComponent.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gravityComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\BackGroundMovementComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\HUD.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerCameraComponent.h" />

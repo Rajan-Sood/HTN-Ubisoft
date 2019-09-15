@@ -4,6 +4,7 @@
 #include "Game\GameComponents\BackgroundMovementComponent.h"
 #include "GameEngine\EntitySystem\Components\SpriteRenderComponent.h"
 #include "Game\GameComponents\PlayerMovementComponent.h"
+#include "../../gravityComponent.h"
 
 
 using namespace Game;
@@ -53,7 +54,8 @@ void GameBoard::CreatePlayer()
 	spriteRender->SetTexture(GameEngine::eTexture::Player);
 
 	player->AddComponent<PlayerMovementComponent>();
-
+	player->AddComponent<GameEngine::AnimationComponent>();
+	player->AddComponent<gravityComponent>();
 
 }
 
