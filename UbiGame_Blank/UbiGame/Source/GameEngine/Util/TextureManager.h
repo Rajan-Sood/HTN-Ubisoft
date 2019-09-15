@@ -13,6 +13,7 @@ namespace GameEngine
 			None = -1,
 			Player = 0,
 			Tileset,
+			Items,
 			Background,
 			Particles,
 			Count,
@@ -25,6 +26,7 @@ namespace GameEngine
 		{
 		case eTexture::Player:    return "player.png";
 		case eTexture::Tileset:   return "tileset.png";
+		case eTexture::Items:	return "items.png";
 		case eTexture::Background:		  return "bg.jpg";
 		case eTexture::Particles: return "particles.png";
 		default:       return "UnknownTexType";
@@ -58,6 +60,7 @@ namespace TextureHelper
 		{
 		case  GameEngine::eTexture::Player:  return sf::Vector2f(32.f, 32.f);
 		case  GameEngine::eTexture::Tileset: return sf::Vector2f(32.f, 32.f);
+		case GameEngine::eTexture::Items: return sf::Vector2f(70.f, 70.f);
 		//case  GameEngine::eTexture::BG:	     return sf::Vector2f(500.f, 500.f);
 		case  GameEngine::eTexture::Particles: return sf::Vector2f(31.f, 32.f);
 		default:							 return sf::Vector2f(-1.f, -1.f);
