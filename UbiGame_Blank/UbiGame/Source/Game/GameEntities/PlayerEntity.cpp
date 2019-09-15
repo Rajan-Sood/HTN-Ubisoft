@@ -10,7 +10,7 @@ PlayerEntity::PlayerEntity()
 	m_renderComponent = static_cast<GameEngine::SpriteRenderComponent*>(AddComponent<GameEngine::SpriteRenderComponent>());
 	m_renderComponent->SetFillColor(sf::Color::Transparent);
 	m_playerMovementComponent = static_cast<Game::PlayerMovementComponent*>(AddComponent<Game::PlayerMovementComponent>());
-	//AddComponent<GameEngine::CollidablePhysicsComponent>();
+	AddComponent<GameEngine::CollidablePhysicsComponent>();
 
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
 	m_renderComponent->SetZLevel(2);

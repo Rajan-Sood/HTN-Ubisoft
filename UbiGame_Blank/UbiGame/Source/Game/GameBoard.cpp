@@ -6,7 +6,6 @@
 #include <Game\GameEntities\ItemEntity.h>
 #include <GameEngine\EntitySystem\Components\ParticleEmitterComponent.h>
 #include "Game\GameComponents\PlayerMovementComponent.h"
-#include <Game\GameEntities\BuildingEntity.h>
 #include "Game\GameEntities\PlayerEntity.h"
 using namespace Game;
 
@@ -26,11 +25,11 @@ GameBoard::~GameBoard()
 
 void GameBoard::CreatePlayer()
 {
-	player = new GameEngine::Entity();
+	player = new PlayerEntity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
 
-	player->SetPos(sf::Vector2f(400.f, 250.f));
-	player->SetSize(sf::Vector2f(40.f, 40.f));
+	player->SetPos(sf::Vector2f(220.f, 300.f));
+	player->SetSize(sf::Vector2f(100.f, 100.f));
 
 }
 
@@ -52,69 +51,6 @@ void GameBoard::CreateBackGround()
 }
 
 
-void GameBoard::CreatePlayer()
-{
-	player = new PlayerEntity();
-
-	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
-	player->SetPos(sf::Vector2f(50.f, 50.f));
-	player->SetSize(sf::Vector2f(115.f, 118.f));
-
-}
-
-void GameBoard::UpdateBuildings(float dt)
-{
-	static float obstacleSpeed = 100.f;
-
-	for (std::vector<GameEngine::Entity*>::iterator it = BuildingList.begin(); it != BuildingList.end(); ++it)
-	{
-		GameEngine::Entity* item = (*it);
-		sf::Vector2f currPos = item->GetPos();
-		currPos.x -= obstacleSpeed * dt;
-		item->SetPos(currPos);
-		//If we are to remove ourselves
-		if (currPos.x < -50.f)
-		{
-			GameEngine::GameEngineMain::GetInstance()->RemoveEntity(item);
-			it = BuildingList.erase(it);
-		}
-	}
-}
-
-void GameBoard::SpawnNewRandomBuildings()
-{
-	static int minObstacleCount = 2;
-	static int maxObstacleCount = 7;
-
-	static float minNextSpawnTime = 0.3f;
-	static float maxNextSpawnTime = 0.7f;
-
-	static float minObstacleXPos = 350.f;
-	static float maxObstacleXPos = 450.f;
-	static float minObstacleYPos = 50.f;
-	static float maxObstacleYPos = 310.f;
-
-	sf::Vector2f pos = sf::Vector2f(RandomFloatRange(minObstacleXPos, maxObstacleXPos),300.f);
-	sf::Vector2f size = sf::Vector2f(130.f, 150.f);
-
-	int obstacleCount = (int)RandomFloatRange((float)minObstacleCount, (float)maxObstacleCount);
-
-	SpawnNewBuildings(pos, size);
-	//pos.y += size.y;
-
-
-	i_lastObstacleSpawnTimer = RandomFloatRange(minNextSpawnTime, maxNextSpawnTime);
-}
-
-void GameBoard::SpawnNewBuildings(const sf::Vector2f& pos, const sf::Vector2f& size)
-{
-	BuildingEntity* item = new BuildingEntity();
-	GameEngine::GameEngineMain::GetInstance()->AddEntity(item);
-	item->SetPos(pos);
-	item->SetSize(sf::Vector2f(size.x, size.y));
-	BuildingList.push_back(item);
-}
-
 
 void GameBoard::Update()
 {
@@ -132,7 +68,7 @@ void GameBoard::Update()
 
 void GameBoard::UpdateItems(float dt)
 {
-	static float obstacleSpeed = 100.f;
+	static float obstacleSpeed = 130.f;
 
 	for (std::vector<GameEngine::Entity*>::iterator it = itemList.begin(); it != itemList.end(); ++it)
 	{

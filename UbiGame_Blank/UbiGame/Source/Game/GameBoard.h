@@ -33,9 +33,7 @@ namespace Game
 	private:
 		void CreatePlayer();
 		void CreateBackGround();
-		float i_lastObstacleSpawnTimer;
-		std::vector<GameEngine::Entity*> BuildingList;
-
+		
 
 		float i_lastObstacleSpawnTimer;
 		void CreateObstacle();
